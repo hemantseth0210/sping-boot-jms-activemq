@@ -4,22 +4,22 @@ Spring boot project with JMS using the ActiveMQ
 
 ## Configure ActiveMQ Artemis Server 
 
-    		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>artemis-server</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>artemis-jms-server</artifactId>
-		</dependency>
+<dependency>
+	<groupId>org.apache.activemq</groupId>
+	<artifactId>artemis-server</artifactId>
+</dependency>
+<dependency>
+	<groupId>org.apache.activemq</groupId>
+	<artifactId>artemis-jms-server</artifactId>
+</dependency>
 
 
-	ActiveMQServer server = ActiveMQServers.newActiveMQServer(new ConfigurationImpl()
-					.setPersistenceEnabled(false)
-					.setJournalDirectory("target/data/journal")
-					.setSecurityEnabled(false)
-					.addAcceptorConfiguration("invm", "vm://0"));
-	server.start(); 
+ActiveMQServer server = ActiveMQServers.newActiveMQServer(new ConfigurationImpl()
+				.setPersistenceEnabled(false)
+				.setJournalDirectory("target/data/journal")
+				.setSecurityEnabled(false)
+				.addAcceptorConfiguration("invm", "vm://0"));
+server.start(); 
 
 
 ## Configure ActiveMQ Artemis Server using the Docker Image
